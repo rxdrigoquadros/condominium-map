@@ -1,0 +1,215 @@
+:root {
+  color-scheme: light dark;
+  --bg: #f7f7fb;
+  --panel: #ffffffcc;
+  --border: #d5d7e1;
+  --accent: #2563eb;
+  --accent-contrast: #fff;
+  --text: #111322;
+  --muted: #5c6177;
+  --you-are-here: #f97316;
+  --poi: #0ea5e9;
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont,
+    sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: clamp(1rem, 2vw, 2rem);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.app-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin-top: 0.25rem;
+}
+
+.totem-badge {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 0.75rem 1rem;
+  text-align: right;
+  min-width: 180px;
+}
+
+.totem-badge .label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.map-panel,
+.destinations {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  padding: clamp(1rem, 1.5vw, 2rem);
+  box-shadow: 0 15px 30px rgb(15 23 42 / 0.06);
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.map-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.marker {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.75rem;
+  pointer-events: none;
+}
+
+.marker span {
+  background: var(--you-are-here);
+  color: var(--accent-contrast);
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  font-weight: 600;
+  box-shadow: 0 5px 15px rgb(249 115 22 / 0.35);
+}
+
+.marker::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 10px solid var(--you-are-here);
+}
+
+.poi-marker {
+  position: absolute;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background: var(--poi);
+  border: 2px solid var(--accent-contrast);
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.poi-marker:focus,
+.poi-marker:hover {
+  transform: translate(-50%, -50%) scale(1.2);
+  box-shadow: 0 0 0 6px rgb(14 165 233 / 0.2);
+}
+
+.instruction {
+  margin-top: 1rem;
+  color: var(--muted);
+}
+
+.destinations h2 {
+  margin-top: 0;
+}
+
+.destination-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.destination-card {
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1rem;
+  background: #fff;
+  box-shadow: 0 5px 15px rgb(15 23 42 / 0.04);
+  cursor: pointer;
+  transition: border 0.2s ease, transform 0.2s ease;
+}
+
+.destination-card:focus-visible {
+  outline: 2px solid var(--accent);
+}
+
+.destination-card.active {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+
+.destination-card h3 {
+  margin: 0 0 0.25rem;
+}
+
+.destination-card .description {
+  margin: 0 0 0.5rem;
+  color: var(--muted);
+}
+
+.destination-card .meta {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.directions-link {
+  margin-top: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.25rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  text-decoration: none;
+  font-weight: 600;
+  justify-content: center;
+  text-align: center;
+}
+
+@media (min-width: 900px) {
+  body {
+    padding: clamp(1.5rem, 3vw, 3rem);
+  }
+
+  .layout {
+    grid-template-columns: 3fr 2fr;
+    align-items: start;
+  }
+}

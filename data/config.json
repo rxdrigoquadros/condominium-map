@@ -1,0 +1,65 @@
+{
+  "defaultTotemId": "north-gate",
+  "totems": [
+    {
+      "id": "north-gate",
+      "name": "North Gate Totem",
+      "coordinates": { "lat": 25.7905, "lng": -80.1303 },
+      "mapPosition": { "x": 18, "y": 32 }
+    },
+    {
+      "id": "central-plaza",
+      "name": "Central Plaza Totem",
+      "coordinates": { "lat": 25.7901, "lng": -80.129 },
+      "mapPosition": { "x": 52, "y": 48 }
+    },
+    {
+      "id": "south-tower",
+      "name": "South Tower Totem",
+      "coordinates": { "lat": 25.7893, "lng": -80.1284 },
+      "mapPosition": { "x": 74, "y": 70 }
+    }
+  ],
+  "destinations": [
+    {
+      "id": "admin-office",
+      "name": "Administration Office",
+      "category": "Services",
+      "description": "Resident support, billing and concierge assistance.",
+      "coordinates": { "lat": 25.7902, "lng": -80.1297 },
+      "mapPosition": { "x": 45, "y": 28 }
+    },
+    {
+      "id": "pool",
+      "name": "Skyline Pool",
+      "category": "Amenities",
+      "description": "Infinity pool with shaded cabanas and towel service.",
+      "coordinates": { "lat": 25.7898, "lng": -80.1299 },
+      "mapPosition": { "x": 33, "y": 62 }
+    },
+    {
+      "id": "fitness",
+      "name": "Fitness Center",
+      "category": "Amenities",
+      "description": "24/7 access with cardio and strength equipment.",
+      "coordinates": { "lat": 25.7899, "lng": -80.1292 },
+      "mapPosition": { "x": 60, "y": 40 }
+    },
+    {
+      "id": "playground",
+      "name": "Children's Playground",
+      "category": "Outdoor",
+      "description": "Shaded playground with splash pad and seating.",
+      "coordinates": { "lat": 25.7896, "lng": -80.1287 },
+      "mapPosition": { "x": 80, "y": 55 }
+    },
+    {
+      "id": "event-hall",
+      "name": "Harbor Event Hall",
+      "category": "Events",
+      "description": "Bookable hall for resident meetings and celebrations.",
+      "coordinates": { "lat": 25.7904, "lng": -80.1288 },
+      "mapPosition": { "x": 58, "y": 15 }
+    }
+  ]
+}
