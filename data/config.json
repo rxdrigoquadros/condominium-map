@@ -24,6 +24,66 @@
       "name": "Totem da Avenida Cannes",
       "coordinates": { "lat": 25.7901, "lng": -80.129 },
       "mapPosition": { "x": 75.2, "y": 58.2 }
+    },
+    {
+      "id": "al-lemans",
+      "name": "Totem da Alameda Le Mans",
+      "coordinates": { "lat": 25.7901, "lng": -80.129 },
+      "mapPosition": { "x": 45, "y": 73 }
+    },
+    {
+      "id": "al-dijon-1",
+      "name": "Totem da Alameda Dijon",
+      "coordinates": { "lat": 25.7901, "lng": -80.129 },
+      "mapPosition": { "x": 44, "y": 71.8 }
+    },
+    {
+      "id": "al-orleans-1",
+      "name": "Totem da Alameda Orleans",
+      "coordinates": { "lat": 25.7901, "lng": -80.129 },
+      "mapPosition": { "x": 36.8, "y": 65.5 }
+    },
+    {
+      "id": "al-orleans-2",
+      "name": "Totem da Alameda Orleans",
+      "coordinates": { "lat": 25.7901, "lng": -80.129 },
+      "mapPosition": { "x": 33, "y": 51.5 }
+    },
+    {
+      "id": "al-orleans-3",
+      "name": "Totem da Alameda Orleans",
+      "coordinates": { "lat": 25.7901, "lng": -80.129 },
+      "mapPosition": { "x": 31.5, "y": 51 }
+    },
+    {
+      "id": "al-orleans-4",
+      "name": "Totem da Alameda Orleans",
+      "coordinates": { "lat": 25.7901, "lng": -80.129 },
+      "mapPosition": { "x": 21.5, "y": 43 }
+    },
+    {
+      "id": "al-dijon-2",
+      "name": "Totem da Alameda Dijon",
+      "coordinates": { "lat": 25.7901, "lng": -80.129 },
+      "mapPosition": { "x": 19, "y": 56 }
+    },
+    {
+      "id": "al-nice",
+      "name": "Totem da Alameda Nice",
+      "coordinates": { "lat": 25.7901, "lng": -80.129 },
+      "mapPosition": { "x": 12.5, "y": 50.5 }
+    },
+    {
+      "id": "al-chinon",
+      "name": "Totem da Alameda Chinon",
+      "coordinates": { "lat": 25.7901, "lng": -80.129 },
+      "mapPosition": { "x": 10.8, "y": 51.5 }
+    },
+    {
+      "id": "av-marselha",
+      "name": "Totem da Avenida Marselha",
+      "coordinates": { "lat": 25.7901, "lng": -80.129 },
+      "mapPosition": { "x": 9, "y": 30  }
     }
   ],
   "destinations": [
@@ -32,63 +92,63 @@
       "name": "Portaria - Raposo",
       "category": "Estrutura",
       "description": "Portaria de acesso da Rodovia Raposo Tavares",
-      "coordinates": { "lat": 25.7902, "lng": -80.1297 },
-      "mapPosition": { "x": 45, "y": 28 }
+      "coordinates": { "lat": -23.522369, "lng": -47.529950 },
+      "mapPosition": { "x": 91.3, "y": 58 }
     },{
       "id": "portaria-ipatinga",
       "name": "Portaria - Ipatinga",
       "category": "Estrutura",
       "description": "Portaria de acesso do Ipatinga",
-      "coordinates": { "lat": 25.7902, "lng": -80.1297 },
-      "mapPosition": { "x": 45, "y": 28 }
+      "coordinates": { "lat": -23.514140, "lng": -47.520086 },
+      "mapPosition": { "x": 7.5, "y": 29.5 }
     },
     {
       "id": "administration",
       "name": "Administração",
       "category": "Serviços",
-      "description": "Suporte ao associado, faturamento e assistência de concierge",
-      "coordinates": { "lat": 25.7902, "lng": -80.1297 },
-      "mapPosition": { "x": 45, "y": 28 }
+      "description": "Atendimento ao associado e prestadores de serviço",
+      "coordinates": { "lat": -23.522427, "lng": -47.529688 },
+      "mapPosition": { "x": 90, "y": 56.5 }
     },
     {
       "id": "gym",
       "name": "Academia",
       "category": "Saúde e Bem-estar",
       "description": "Aparelhos de musculação e área para exercícios aeróbicos",
-      "coordinates": { "lat": 25.7898, "lng": -80.1299 },
-      "mapPosition": { "x": 33, "y": 62 }
+      "coordinates": { "lat": -23.522116, "lng": -47.530473 },
+      "mapPosition": { "x": 92, "y": 63.8 }
     },
     {
       "id": "lake-1",
       "name": "Lago I",
       "category": "Natureza",
       "description": "Área de preservação",
-      "coordinates": { "lat": 25.7899, "lng": -80.1292 },
-      "mapPosition": { "x": 60, "y": 40 }
+      "coordinates": { "lat": -23.515811, "lng": -47.528477 },
+      "mapPosition": { "x": 64, "y": 67.5 }
     },
     {
       "id": "lake-2",
       "name": "Lago II",
       "category": "Natureza",
       "description": "Área de preservação",
-      "coordinates": { "lat": 25.7896, "lng": -80.1287 },
-      "mapPosition": { "x": 80, "y": 55 }
+      "coordinates": { "lat": -23.516170, "lng": -47.525084 },
+      "mapPosition": { "x": 44, "y": 61.5 }
     },
     {
       "id": "leisure-area",
       "name": "Área de lazer",
       "category": "Lazer",
       "description": "Quadra de tênis, beach tênis, poliesportiva, playground, quiosque, campo de society e mini mercado",
-      "coordinates": { "lat": 25.7904, "lng": -80.1288 },
-      "mapPosition": { "x": 58, "y": 15 }
+      "coordinates": { "lat": -23.515811, "lng": -47.528477 },
+      "mapPosition": { "x": 46.5, "y": 83 }
     },
     {
       "id": "fase-ii",
       "name": "Fase II",
       "category": "Estrutura",
       "description": "Entrada da Associação Saint Patrick - Fase II",
-      "coordinates": { "lat": 25.7904, "lng": -80.1288 },
-      "mapPosition": { "x": 58, "y": 15 }
+      "coordinates": { "lat": -23.516070, "lng": -47.524276 },
+      "mapPosition": { "x": 32.5, "y": 50.5 }
     }
   ]
 }
