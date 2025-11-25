@@ -1,63 +1,92 @@
 {
-  "defaultTotemId": "north-gate",
+  "defaultTotemId": "av-cannes-1",
   "totems": [
     {
-      "id": "north-gate",
-      "name": "North Gate Totem",
+      "id": "av-cannes-1",
+      "name": "Totem da Avenida Cannes",
       "coordinates": { "lat": 25.7905, "lng": -80.1303 },
-      "mapPosition": { "x": 18, "y": 32 }
+      "mapPosition": { "x": 90, "y": 58.5 }
     },
     {
-      "id": "central-plaza",
-      "name": "Central Plaza Totem",
+      "id": "av-cannes-2",
+      "name": "Totem da Avenida Cannes",
       "coordinates": { "lat": 25.7901, "lng": -80.129 },
-      "mapPosition": { "x": 150, "y": 150 }
+      "mapPosition": { "x": 84, "y": 58 }
     },
     {
-      "id": "south-tower",
-      "name": "South Tower Totem",
-      "coordinates": { "lat": 25.7893, "lng": -80.1284 },
-      "mapPosition": { "x": 74, "y": 70 }
+      "id": "av-cannes-3",
+      "name": "Totem da Avenida Cannes",
+      "coordinates": { "lat": 25.7901, "lng": -80.129 },
+      "mapPosition": { "x": 76.5, "y": 57.5 }
+    },
+    {
+      "id": "av-cannes-4",
+      "name": "Totem da Avenida Cannes",
+      "coordinates": { "lat": 25.7901, "lng": -80.129 },
+      "mapPosition": { "x": 75.2, "y": 58.2 }
     }
   ],
   "destinations": [
     {
-      "id": "admin-office",
-      "name": "Administration Office",
-      "category": "Services",
-      "description": "Resident support, billing and concierge assistance.",
+      "id": "portaria-raposo",
+      "name": "Portaria - Raposo",
+      "category": "Estrutura",
+      "description": "Portaria de acesso da Rodovia Raposo Tavares",
+      "coordinates": { "lat": 25.7902, "lng": -80.1297 },
+      "mapPosition": { "x": 45, "y": 28 }
+    },{
+      "id": "portaria-ipatinga",
+      "name": "Portaria - Ipatinga",
+      "category": "Estrutura",
+      "description": "Portaria de acesso do Ipatinga",
       "coordinates": { "lat": 25.7902, "lng": -80.1297 },
       "mapPosition": { "x": 45, "y": 28 }
     },
     {
-      "id": "pool",
-      "name": "Skyline Pool",
-      "category": "Amenities",
-      "description": "Infinity pool with shaded cabanas and towel service.",
+      "id": "administration",
+      "name": "Administração",
+      "category": "Serviços",
+      "description": "Suporte ao associado, faturamento e assistência de concierge",
+      "coordinates": { "lat": 25.7902, "lng": -80.1297 },
+      "mapPosition": { "x": 45, "y": 28 }
+    },
+    {
+      "id": "gym",
+      "name": "Academia",
+      "category": "Saúde e Bem-estar",
+      "description": "Aparelhos de musculação e área para exercícios aeróbicos",
       "coordinates": { "lat": 25.7898, "lng": -80.1299 },
       "mapPosition": { "x": 33, "y": 62 }
     },
     {
-      "id": "fitness",
-      "name": "Fitness Center",
-      "category": "Amenities",
-      "description": "24/7 access with cardio and strength equipment.",
+      "id": "lake-1",
+      "name": "Lago I",
+      "category": "Natureza",
+      "description": "Área de preservação",
       "coordinates": { "lat": 25.7899, "lng": -80.1292 },
       "mapPosition": { "x": 60, "y": 40 }
     },
     {
-      "id": "playground",
-      "name": "Children's Playground",
-      "category": "Outdoor",
-      "description": "Shaded playground with splash pad and seating.",
+      "id": "lake-2",
+      "name": "Lago II",
+      "category": "Natureza",
+      "description": "Área de preservação",
       "coordinates": { "lat": 25.7896, "lng": -80.1287 },
       "mapPosition": { "x": 80, "y": 55 }
     },
     {
-      "id": "event-hall",
-      "name": "Harbor Event Hall",
-      "category": "Events",
-      "description": "Bookable hall for resident meetings and celebrations.",
+      "id": "leisure-area",
+      "name": "Área de lazer",
+      "category": "Lazer",
+      "description": "Quadra de tênis, beach tênis, poliesportiva, playground, quiosque, campo de society e mini mercado",
+      "coordinates": { "lat": 25.7904, "lng": -80.1288 },
+      "mapPosition": { "x": 58, "y": 15 }
+    },
+    {
+      "id": "fase-ii",
+      "name": "Fase II",
+      "category": "Estrutura",
+      "description": "Entrada da Associação Saint Patrick - Fase II",
       "coordinates": { "lat": 25.7904, "lng": -80.1288 },
       "mapPosition": { "x": 58, "y": 15 }
     }

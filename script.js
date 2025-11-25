@@ -105,7 +105,7 @@ function selectDestination(destinationId) {
   const googleMapsUrl = buildGoogleMapsLink(activeTotem.coordinates, destination);
   directionsLink.href = googleMapsUrl;
   directionsLink.hidden = false;
-  directionsLink.textContent = `Navigate to ${destination.name}`;
+  directionsLink.textContent = `Rota para ${destination.name}`;
 }
 
 async function init() {
