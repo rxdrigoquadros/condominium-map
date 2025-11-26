@@ -4,85 +4,85 @@
     {
       "id": "av-cannes-1",
       "name": "Totem da Avenida Cannes",
-      "coordinates": { "lat": 25.7905, "lng": -80.1303 },
+      "coordinates": { "lat": -23.522269, "lng": -47.529834 },
       "mapPosition": { "x": 90, "y": 58.5 }
     },
     {
       "id": "av-cannes-2",
       "name": "Totem da Avenida Cannes",
-      "coordinates": { "lat": 25.7901, "lng": -80.129 },
+      "coordinates": { "lat": -23.521685, "lng": -47.529347 },
       "mapPosition": { "x": 84, "y": 58 }
     },
     {
       "id": "av-cannes-3",
       "name": "Totem da Avenida Cannes",
-      "coordinates": { "lat": 25.7901, "lng": -80.129 },
+      "coordinates": { "lat": -23.520815, "lng": -47.528549 },
       "mapPosition": { "x": 76.5, "y": 57.5 }
     },
     {
       "id": "av-cannes-4",
       "name": "Totem da Avenida Cannes",
-      "coordinates": { "lat": 25.7901, "lng": -80.129 },
+      "coordinates": { "lat": -23.520538, "lng": -47.528506 },
       "mapPosition": { "x": 75.2, "y": 58.2 }
     },
     {
       "id": "al-lemans",
       "name": "Totem da Alameda Le Mans",
-      "coordinates": { "lat": 25.7901, "lng": -80.129 },
+      "coordinates": { "lat": -23.516212, "lng": -47.527419 },
       "mapPosition": { "x": 45, "y": 73 }
     },
     {
       "id": "al-dijon-1",
       "name": "Totem da Alameda Dijon",
-      "coordinates": { "lat": 25.7901, "lng": -80.129 },
+      "coordinates": { "lat": -23.516197, "lng": -47.527210 },
       "mapPosition": { "x": 44, "y": 71.8 }
     },
     {
       "id": "al-orleans-1",
       "name": "Totem da Alameda Orleans",
-      "coordinates": { "lat": 25.7901, "lng": -80.129 },
+      "coordinates": { "lat": -23.515575, "lng": -47.525923 },
       "mapPosition": { "x": 36.8, "y": 65.5 }
     },
     {
       "id": "al-orleans-2",
       "name": "Totem da Alameda Orleans",
-      "coordinates": { "lat": 25.7901, "lng": -80.129 },
+      "coordinates": { "lat": -23.516025, "lng": -47.524382 },
       "mapPosition": { "x": 33, "y": 51.5 }
     },
     {
       "id": "al-orleans-3",
       "name": "Totem da Alameda Orleans",
-      "coordinates": { "lat": 25.7901, "lng": -80.129 },
+      "coordinates": { "lat": -23.515945, "lng": -47.524277 },
       "mapPosition": { "x": 31.5, "y": 51 }
     },
     {
       "id": "al-orleans-4",
       "name": "Totem da Alameda Orleans",
-      "coordinates": { "lat": 25.7901, "lng": -80.129 },
+      "coordinates": { "lat": -23.515254, "lng": -47.522767 },
       "mapPosition": { "x": 21.5, "y": 43 }
     },
     {
       "id": "al-dijon-2",
       "name": "Totem da Alameda Dijon",
-      "coordinates": { "lat": 25.7901, "lng": -80.129 },
+      "coordinates": { "lat": -23.514209, "lng": -47.523639 },
       "mapPosition": { "x": 19, "y": 56 }
     },
     {
       "id": "al-nice",
       "name": "Totem da Alameda Nice",
-      "coordinates": { "lat": 25.7901, "lng": -80.129 },
+      "coordinates": { "lat": -23.513719, "lng": -47.522557 },
       "mapPosition": { "x": 12.5, "y": 50.5 }
     },
     {
       "id": "al-chinon",
       "name": "Totem da Alameda Chinon",
-      "coordinates": { "lat": 25.7901, "lng": -80.129 },
+      "coordinates": { "lat": -23.513443, "lng": -47.522651 },
       "mapPosition": { "x": 10.8, "y": 51.5 }
     },
     {
       "id": "av-marselha",
       "name": "Totem da Avenida Marselha",
-      "coordinates": { "lat": 25.7901, "lng": -80.129 },
+      "coordinates": { "lat": -23.514401, "lng": -47.520553 },
       "mapPosition": { "x": 9, "y": 30  }
     }
   ],

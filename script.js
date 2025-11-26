@@ -93,7 +93,7 @@ function buildGoogleMapsLink(origin, destination) {
   const originParam = `${origin.lat},${origin.lng}`;
   const destinationParam = `${destination.coordinates.lat},${destination.coordinates.lng}`;
   const label = encodeURIComponent(destination.name);
-  return `https://www.google.com/maps/dir/?api=1&origin=${originParam}&destination=${destinationParam}&destination_place_id=&travelmode=walking&dir_action=navigate&destination_place=${label}`;
+  return `https://www.google.com/maps/dir/?api=1&origin=${originParam}&destination=${destinationParam}&destination_place_id=&travelmode=driving&dir_action=navigate&destination_place=${label}`;
 }
 
 function selectDestination(destinationId) {
