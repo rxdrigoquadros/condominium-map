@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Condominium Map</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <h1>Associação Saint Patrick</h1>
+      </div>
+      <div class="totem-badge" aria-live="polite">
+        <strong id="totem-name">Loading…</strong>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="map-panel" aria-label="Condominium map">
+        <div id="map-container" class="map-container">
+          <img src="assets/mapa.jpg" alt="Stylized map of the condominium" />
+          <div id="you-are-here" class="marker you-are-here" role="img" aria-label="You are here" hidden>
+            <span>Você está aqui</span>
+          </div>
+          <div id="poi-markers" class="poi-markers" aria-hidden="true"></div>
+        </div>
+        <p class="instruction">Toque em um destino abaixo para criar rotas do Google Maps a partir deste totem.</p>
+      </section>
+
+      <section class="destinations" aria-label="Destinations">
+        <h2>Áreas comuns</h2>
+        <div id="destination-list" class="destination-list" role="list"></div>
+        <a id="directions-link" class="directions-link" href="#" target="_blank" rel="noopener" hidden>
+          Open Google Maps directions
+        </a>
+      </section>
+    </main>
+
+    <template id="destination-card-template">
+      <article class="destination-card" role="listitem" tabindex="0">
+        <h3></h3>
+        <p class="description"></p>
+        <p class="meta"></p>
+      </article>
+    </template>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

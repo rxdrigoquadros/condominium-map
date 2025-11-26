@@ -1,50 +1,326 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Condominium Map</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="app-header">
-      <div>
-        <h1>Associação Saint Patrick</h1>
-      </div>
-      <div class="totem-badge" aria-live="polite">
-        <strong id="totem-name">Loading…</strong>
-      </div>
-    </header>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+  <meta name="theme-color" content="#6a4f3a" />
+  <title>Associação Saint Patrick</title>
+  <meta name="description" content="Página temporária da Associação Saint Patrick — informações de contato e notícias em breve." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%236a4f3a' width='100' height='100'/><text x='50' y='57' font-size='45' text-anchor='middle' fill='%23f3eadf' font-family='Arial'>S</text></svg>">
 
-    <main class="layout">
-      <section class="map-panel" aria-label="Condominium map">
-        <div id="map-container" class="map-container">
-          <img src="assets/mapa.jpg" alt="Stylized map of the condominium" />
-          <div id="you-are-here" class="marker you-are-here" role="img" aria-label="You are here" hidden>
-            <span>Você está aqui</span>
-          </div>
-          <div id="poi-markers" class="poi-markers" aria-hidden="true"></div>
+  <style>
+    :root{
+      --bg:#4a352a;
+      --panel:#f3eadf;
+      --accent:#d9c9b5;
+      --muted:#b39a86;
+      --white:#ffffff;
+      --max-width:980px;
+      --radius:14px;
+      --gap:20px;
+      font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size:16px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: var(--bg);
+      color:var(--panel);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.4;
+    }
+
+    /* container */
+    .wrap{
+      width:100%;
+      max-width:var(--max-width);
+      padding:18px;
+    }
+
+    /* top logo */
+    .top-logo {
+      width:100%;
+      text-align:center;
+      margin-bottom:12px;
+      margin-top:0;
+    }
+    .top-logo img {
+      max-width:260px;
+      height:auto;
+      object-fit:contain;
+      /*filter: drop-shadow(0 6px 16px rgba(0,0,0,0.30));*/
+      display:inline-block;
+    }
+
+    /* main card */
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border-radius:var(--radius);
+      padding:20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+      display:grid;
+      grid-template-columns: 1fr 320px;
+      gap:var(--gap);
+      align-items:start;
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+
+    /* responsive column widths */
+    @media (max-width:980px){
+      .card{grid-template-columns: 1fr 300px}
+    }
+
+    @media (max-width:720px){
+      .card{
+        grid-template-columns:1fr;
+        padding:16px;
+      }
+      .top-logo img{max-width:200px}
+    }
+
+    @media (max-width:420px){
+      :root{font-size:15px}
+      .top-logo img{max-width:160px}
+    }
+
+    h1{
+      margin:0 0 8px 0;
+      color:var(--panel);
+      font-size:1.45rem;
+      letter-spacing:-0.3px;
+    }
+
+    p.lead{
+      margin:0 0 12px 0;
+      color:var(--muted);
+      font-size:0.95rem;
+    }
+
+    .actions{
+      margin-top:14px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      background:var(--panel);
+      color:#2c1f19;
+      border:none;
+      padding:10px 14px;
+      border-radius:10px;
+      cursor:pointer;
+      font-weight:700;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.14);
+      font-size:0.95rem;
+      min-height:44px; /* touch target */
+      line-height:1;
+    }
+
+    .btn.ghost{
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.06);
+      color:var(--panel);
+    }
+
+    /* full width buttons on small screens */
+    @media (max-width:520px){
+      .actions{flex-direction:column}
+      .btn{width:100%; justify-content:center}
+      .card{padding:14px}
+    }
+
+    .right-panel{
+      background: linear-gradient(180deg, rgba(243,234,223,0.06), rgba(243,234,223,0.02));
+      padding:16px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,0.03);
+      color:var(--panel);
+      align-self:start;
+    }
+
+    .info-row{display:flex; align-items:center; gap:12px; margin-bottom:12px; flex-wrap:wrap}
+    .info-label{font-size:0.90rem; color:var(--muted); min-width:96px}
+    .info-value{font-size:0.95rem; font-weight:700; color:var(--panel)}
+
+    .socials{display:flex; gap:8px; margin-top:8px}
+    .socials a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      background:rgba(0,0,0,0.12);
+      color:var(--panel);
+      text-decoration:none;
+      font-weight:700;
+      font-size:0.95rem;
+      min-width:40px;
+    }
+
+    form.newsletter{margin-top:12px; display:flex; gap:8px}
+    form.newsletter input[type="email"]{
+      flex:1;
+      padding:10px 12px;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,0.12);
+      background: rgba(255,255,255,0.03);
+      color:var(--panel);
+      outline:none;
+      font-size:0.95rem;
+      min-height:44px;
+    }
+
+    form.newsletter button{padding:10px 12px; min-height:44px}
+
+    .footnote{margin-top:12px; color:var(--muted); font-size:0.92rem}
+
+    .news-list{margin-top:14px; color:var(--muted); font-size:0.95rem}
+    .news-list ul{margin:8px 0 0 18px; padding:0}
+
+    /* decorative shape bottom-right */
+    .bg-shape{
+      position:fixed;
+      right:0;
+      bottom:0;
+      width:38vw;
+      height:32vh;
+      pointer-events:none;
+      background: radial-gradient(60% 60% at 40% 40%, rgba(255,255,255,0.02), transparent 40%), linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+      border-top-left-radius:160px;
+      filter: blur(18px);
+      z-index:0;
+    }
+
+    /* small accessibility helpers */
+    .sr-only{
+      position:absolute!important;
+      width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
+    }
+
+    /* fallback logo text styling */
+    .logo-fallback{
+      display:inline-block;
+      font-weight:800;
+      color:var(--panel);
+      text-align:center;
+      line-height:1;
+      font-size:1.1rem;
+      padding:8px 10px;
+      border-radius:8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top-logo" role="img" aria-label="Logo Associação Saint Patrick">
+      <img src="logo.png" alt="Logo Residencial Saint Patrick" id="mainLogo">
+    </div>
+
+    <main class="card" role="main" aria-labelledby="title">
+      <section>
+        <h1 id="title">Associação Saint Patrick</h1>
+        <p class="lead">Página temporária — site oficial em construção. Aqui você encontra informações de contato, notícias e como participar da associação.</p>
+
+        <div class="actions" aria-hidden="false">
+          <a class="btn" href="mailto:contato@associacaosaintpatrick.com.br?subject=Informações%20-%20Associação%20Saint%20Patrick" title="Enviar e-mail">
+            ✉️ Contato
+          </a>
+
+          <a class="btn ghost" href="tel:+5511999999999" title="Ligar para a Associação">
+            📞 (11) 99999-9999
+          </a>
+
+          <a class="btn ghost" href="/mapa/?totem=principal" title="Ver mapa">
+            📍 Localização
+          </a>
         </div>
-        <p class="instruction">Toque em um destino abaixo para criar rotas do Google Maps a partir deste totem.</p>
+
+        <p class="footnote">Se você é morador ou interessado em participar, use o botão <strong>Contato</strong> acima. Atualizações e a versão completa do site chegam em breve.</p>
+
+        <div class="news-list" aria-live="polite">
+          <strong>Últimas notícias:</strong>
+          <ul>
+            <li>Assembleia Geral: data em breve — acompanhe por e-mail.</li>
+            <li>Cadastro de associados: formulário disponível em breve.</li>
+          </ul>
+        </div>
       </section>
 
-      <section class="destinations" aria-label="Destinations">
-        <h2>Áreas comuns</h2>
-        <div id="destination-list" class="destination-list" role="list"></div>
-        <a id="directions-link" class="directions-link" href="#" target="_blank" rel="noopener" hidden>
-          Open Google Maps directions
-        </a>
-      </section>
+      <aside class="right-panel" aria-labelledby="panelTitle">
+        <h2 id="panelTitle" style="margin:0 0 12px 0; font-size:1rem;">Contato & redes</h2>
+
+        <div class="info-row">
+          <div class="info-label">E-mail</div>
+          <div class="info-value">contato@associacaosaintpatrick.com.br</div>
+        </div>
+
+        <div class="info-row">
+          <div class="info-label">Telefone</div>
+          <div class="info-value">(11) 99999-9999</div>
+        </div>
+
+        <div class="info-row">
+          <div class="info-label">Endereço</div>
+          <div class="info-value">Rua Exemplo, 123 — Bairro, Cidade - SP</div>
+        </div>
+
+        <div class="socials" aria-hidden="false">
+          <a href="#" title="Facebook" aria-label="Facebook">f</a>
+          <a href="#" title="Instagram" aria-label="Instagram">ig</a>
+          <a href="#" title="YouTube" aria-label="YouTube">▶</a>
+        </div>
+
+        <form class="newsletter" onsubmit="subscribe(event)">
+          <label for="email" class="sr-only">Seu e-mail para novidades</label>
+          <input id="email" type="email" placeholder="Seu e-mail para novidades" required>
+          <button class="btn" type="submit">Inscrever</button>
+        </form> 
+
+        <p class="footnote" style="margin-top:12px">Ao inscrever-se, você receberá notícias e avisos sobre assembleias e eventos.</p>
+      </aside>
     </main>
 
-    <template id="destination-card-template">
-      <article class="destination-card" role="listitem" tabindex="0">
-        <h3></h3>
-        <p class="description"></p>
-        <p class="meta"></p>
-      </article>
-    </template>
+    <div style="height:12px"></div>
+  </div>
 
-    <script src="script.js" defer></script>
-  </body>
+  <div class="bg-shape" aria-hidden="true"></div>
+
+  <script>
+    function subscribe(e){
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      if(!email){ alert('Por favor, informe um e-mail válido.'); return; }
+      const subject = encodeURIComponent("Inscrição - Newsletter Associação Saint Patrick");
+      const body = encodeURIComponent("Olá,\n\nQuero inscrever o e-mail " + email + " para receber novidades da Associação Saint Patrick.\n\nObrigado.");
+      window.location.href = `mailto:contato@associacaosaintpatrick.com.br?subject=${subject}&body=${body}`;
+    }
+
+    // fallback: se o logo não carregar, usa texto simples
+    document.addEventListener('DOMContentLoaded', () => {
+      const img = document.getElementById('mainLogo');
+      img.addEventListener('error', () => {
+        const container = img.parentElement;
+        container.innerHTML = '<div class="logo-fallback">Associação<br>Saint Patrick</div>';
+      });
+    });
+
+    // melhorar foco em botões para usuários mobile quando navegam via teclado/voz
+    document.querySelectorAll('.btn, .socials a').forEach(el => {
+      el.addEventListener('touchstart', ()=>{}); // no-op to hint mobile browser about touch targets
+    });
+  </script>
+</body>
 </html>
