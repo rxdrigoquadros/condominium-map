@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /
+
+# Crawlers must not index or crawl any part of this site.
